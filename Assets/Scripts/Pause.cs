@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
     public static bool GamePaused = false;
@@ -36,6 +36,7 @@ public class Pause : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         GamePaused = false;
+        objects_ToDeactivate.SetActive(true);
     }
     private void StopGame()
     {
@@ -46,5 +47,16 @@ public class Pause : MonoBehaviour
         objects_ToDeactivate.SetActive(false);
         Debug.Log("Ojects deactivated");
     }
-    
+
+    public void Menu_()
+    {
+        SceneManager.LoadScene("Menu");
+        Debug.Log("Load Menu");
+    }
+
+    public void quit()
+    {
+        Application.Quit();
+        Debug.Log("quit game");
+    }
 }
