@@ -644,10 +644,7 @@ namespace MoreMountains.TopDownEngine
 				WeaponState.ChangeState(WeaponStates.WeaponInterrupted);
 			}
 		}
-        
-        
-
-
+		
 		/// <summary>
 		/// Determines whether or not the weapon can fire
 		/// </summary>
