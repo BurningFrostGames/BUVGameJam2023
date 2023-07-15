@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6889628390553238962}
   - component: {fileID: 951616531844244272}
   m_Layer: 0
-  m_Name: Enemy_Test
+  m_Name: Red_Ghost
   m_TagString: WhiteGhost
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 3330869092952441294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.64, y: 2.59, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.64, y: 0.64, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,15 +76,14 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1370704943
-  m_SortingLayer: 0
+  m_SortingLayerID: 1672459915
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
-    type: 3}
-  m_Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
+  m_Sprite: {fileID: 2045303262, guid: c229d4897061f5c43a7b6f571395cc5d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 1
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -101,7 +100,7 @@ Animator:
   m_GameObject: {fileID: 3330869092952441294}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3fd267534476ee043b241791ba4ef592, type: 2}
+  m_Controller: {fileID: 9100000, guid: c37fc10c119a2634aaa5315a0a71ae41, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -205,19 +204,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 666480cacb9cfa24bb61fbdfb658eddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1
   checkRadius: 10
   attackRadius: 1
   shouldRotate: 1
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   dir: {x: 0, y: 0, z: 0}
   _damage: 10
   isInAttackRange: 0
   isInChaseRange: 0
   isInMeeleRange: 0
-  anim: {fileID: 0}
+  anim: {fileID: 7937421040977123420}
 --- !u!61 &951616531844244272
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -254,10 +253,10 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
