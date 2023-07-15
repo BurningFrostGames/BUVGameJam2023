@@ -63,7 +63,7 @@ public class GhostCatcher : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             if (_holdingGhost)
             {
@@ -91,7 +91,7 @@ public class GhostCatcher : MonoBehaviour
             FindGhost();
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(1))
         {
             _currentSelectedGhost = null;
         }
@@ -119,6 +119,6 @@ public class GhostCatcher : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(catchPosition, catchDistance);
+        Gizmos.DrawWireSphere(catchPosition, catchDistance);
     }
 }
