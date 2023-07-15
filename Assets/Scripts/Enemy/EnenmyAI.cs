@@ -84,15 +84,22 @@ public class EnenmyAI : MonoBehaviour
 
             if (this.gameObject.tag == "RedGhost")
             {
-                
+                Debug.Log("PlayerTouched");
+                StartCoroutine(WaitforExplode());
+            }
+
+            if (this.gameObject.tag == "BlueGhost")
+            {
+                Debug.Log("PlayerTouched");
             }
         }
         
     }
     private IEnumerator WaitforExplode()
     {
-        Animate.SetBool("isDead", true);
-        yield return new WaitForSeconds(1.0f);
+        //anim.SetBool("isDead", true);
+        yield return new WaitForSeconds(3.0f);
+        Debug.Log("Explodddddd");
         Destroy(this.gameObject);
     }
 }
