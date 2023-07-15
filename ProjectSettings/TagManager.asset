@@ -3,12 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - BlueGhost
+  - WhiteGhost
+  - RedGhost
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
@@ -38,6 +42,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Enemy
+    uniqueID: 1370704943
+    locked: 0
+  - name: Player
+    uniqueID: 3392235721
+    locked: 0
+  - name: BackGround
+    uniqueID: 427866043
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
