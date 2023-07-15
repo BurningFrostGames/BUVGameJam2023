@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CrossHair : MonoBehaviour
@@ -16,6 +17,11 @@ public class CrossHair : MonoBehaviour
     public Vector2 hotSpot = Vector2.zero;
     private Vector3 mousePosition;
     public float moveSpeed = 1f;
+
+    private void Start()
+    {
+        Player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void Update()
     {

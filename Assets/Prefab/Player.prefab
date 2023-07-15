@@ -53,10 +53,8 @@ GameObject:
   - component: {fileID: 114042670615466288}
   - component: {fileID: 114450207927170996}
   - component: {fileID: 114871673569860628}
-  - component: {fileID: 114654745524214770}
-  - component: {fileID: 114704504716019314}
   m_Layer: 10
-  m_Name: MinimalCharacter2D
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -511,78 +509,6 @@ MonoBehaviour:
   TargetDamageResistanceProcessor: {fileID: 0}
   TargetAnimator: {fileID: 0}
   DisableAnimatorLogs: 1
---- !u!114 &114654745524214770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790328835693532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a07c6668aa55403790d27b575279549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 0}
-  AbilityStopSfx: {fileID: 0}
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  InitialWeapon: {fileID: 0}
-  CanPickupWeapons: 1
-  WeaponUseFeedback: {fileID: 0}
-  WeaponAttachment: {fileID: 4539632890920534}
-  ProjectileSpawn: {fileID: 0}
-  AutomaticallyBindAnimator: 1
-  AmmoDisplayID: 0
-  AutoIK: 1
-  ContinuousPress: 0
-  GettingHitInterruptsAttack: 0
-  UseSecondaryAxisThresholdToShoot: 0
-  ForceWeaponAimControl: 0
-  ForcedWeaponAimControl: 1
-  ForceAlwaysShoot: 0
-  BufferInput: 0
-  NewInputExtendsBuffer: 0
-  MaximumBufferDuration: 0.25
-  RequiresPerfectTile: 0
-  CurrentWeapon: {fileID: 0}
---- !u!114 &114704504716019314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790328835693532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05b56d00552d6cd44b46000232e9d83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 0}
-  AbilityStopSfx: {fileID: 0}
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  PlayerID: Player1
-  MainInventoryName: KoalaMainInventory
-  WeaponInventoryName: KoalaWeaponInventory
-  HotbarInventoryName: 
-  InventoryTransform: {fileID: 0}
-  WeaponRotationMode: 0
-  AutoPickItems: []
-  AutoPickOnlyIfMainInventoryIsEmpty: 0
-  AutoEquipWeaponOnStart: {fileID: 0}
-  AutoEquipOnlyIfMainInventoryIsEmpty: 0
-  CharacterHandleWeapon: {fileID: 0}
 --- !u!1 &1997364199477008
 GameObject:
   m_ObjectHideFlags: 0
