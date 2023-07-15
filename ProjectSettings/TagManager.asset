@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - World
   - NoMask
+  - WhiteGhost
+  - RedGhost
+  - SpawnLine
   layers:
   - Default
   - TransparentFX
