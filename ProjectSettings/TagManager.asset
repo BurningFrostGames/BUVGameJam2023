@@ -11,6 +11,7 @@ TagManager:
   - NoMask
   - WhiteGhost
   - RedGhost
+  - SpawnLine
   layers:
   - Default
   - TransparentFX
@@ -47,19 +48,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 1798043625
-    locked: 0
-  - name: Ground
-    uniqueID: 2296623839
-    locked: 0
-  - name: Foreground
-    uniqueID: 1603220759
-    locked: 0
-  - name: Characters
-    uniqueID: 47421343
-    locked: 0
-  - name: Above
-    uniqueID: 961700441
     locked: 0

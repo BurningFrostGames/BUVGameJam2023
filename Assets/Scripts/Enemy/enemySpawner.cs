@@ -10,7 +10,7 @@ public class enemySpawner : MonoBehaviour
 
     public GameObject[] enemies;
     public bool ableToSpawn = true;
-    public int scoretoPass = 1000;
+    public int scoreToPass = 1000;
     [SerializeField] private int playerScore;
     private Score scoreManager;
 
@@ -28,7 +28,7 @@ public class enemySpawner : MonoBehaviour
     {
         if (this.gameObject.tag == "SpawnLine")
         {
-            if (collision.tag == "Player")
+            if (collision.CompareTag("Player"))
             {
                 if (ableToSpawn)
                 {
