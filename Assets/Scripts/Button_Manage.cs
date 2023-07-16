@@ -26,6 +26,7 @@ public class Button_Manage : MonoBehaviour
 
     public void options_Menu()
     {
+        SceneManager.LoadScene("Menu");
         Debug.Log("Options");
     }
 

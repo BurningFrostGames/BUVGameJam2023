@@ -37,8 +37,8 @@ public class newSpawn : MonoBehaviour
     IEnumerator Spawn()
     {
         int randomIndex = Random.Range(0, enemies.Length);
-        Instantiate(enemies[randomIndex], (Vector2)spawnPoint.position + (Random.insideUnitCircle * spawnRadius), Quaternion.identity);
-        Debug.Log(i);
+        Instantiate(enemies[randomIndex], (Vector2)spawnPoint.position + (Random.insideUnitCircle * spawnRadius),
+            Quaternion.identity);
         yield return new WaitForSeconds(spawnBreakTime);
 
     }
