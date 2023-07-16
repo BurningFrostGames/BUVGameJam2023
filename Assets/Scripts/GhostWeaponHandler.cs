@@ -35,9 +35,19 @@ namespace BurningFrost
                 return;
             }
 
+            if (Input.GetMouseButtonDown(0))
+            {
+                _currentWeapon.PressedWeapon();
+            }
+
             if (Input.GetMouseButton(0))
             {
                 _currentWeapon.UseWeapon();
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                _currentWeapon.ReleasedWeapon();
             }
         }
     }

@@ -14,7 +14,10 @@ namespace BurningFrost
 
     public struct GhostParameter
     {
-        public GhostWeapon Ghost;
+        public bool isNull;
+        public float MaxFloat;
+        public float CurrentFloat;
+        public Color Color;
     }
 
     public class GhostCatcher : MonoBehaviour
@@ -51,7 +54,10 @@ namespace BurningFrost
 
             MMEventManager.TriggerEvent(new GhostParameter
             {
-                Ghost = _holdingGhost
+                isNull = false,
+                MaxFloat = _holdingGhost.MaxAmmo,
+                CurrentFloat = _holdingGhost.CurrentAmmo,
+                Color = _holdingGhost.Color
             });
         }
 
@@ -74,7 +80,7 @@ namespace BurningFrost
 
             MMEventManager.TriggerEvent(new GhostParameter
             {
-                Ghost = null
+                isNull = true,
             });
 
             _holdingGhost = null;

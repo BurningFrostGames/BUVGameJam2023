@@ -13,15 +13,15 @@ namespace BurningFrost
 
         public void OnMMEvent(GhostParameter parameter)
         {
-            if (!parameter.Ghost)
+            if (parameter.isNull)
             {
                 fill.color = Color.clear;
                 return;
             }
 
-            slider.maxValue = parameter.Ghost.MaxAmmo;
-            slider.value = parameter.Ghost.CurrentAmmo;
-            fill.color = parameter.Ghost.Color;
+            slider.maxValue = parameter.MaxFloat;
+            slider.value = parameter.CurrentFloat;
+            fill.color = parameter.Color;
         }
 
         /// <summary>
