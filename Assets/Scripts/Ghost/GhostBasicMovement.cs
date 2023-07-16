@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace BurningFrost
@@ -10,7 +11,7 @@ namespace BurningFrost
     {
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private float speed = 10f;
-        [SerializeField] private float attackRange = 1f;
+        [SerializeField] private float moveRange = 1f;
 
         private Transform _target;
         private Vector3 _movement;
@@ -31,7 +32,7 @@ namespace BurningFrost
 
         private void FixedUpdate()
         {
-            if (Vector3.Distance(_target.position, transform.position) > attackRange)
+            if (Vector3.Distance(_target.position, transform.position) > moveRange)
             {
                 Move(_movement);
             }
@@ -44,7 +45,7 @@ namespace BurningFrost
 
         private void OnDrawGizmosSelected()
         {
-            Gizmos.DrawWireSphere(transform.position, attackRange);
+            Gizmos.DrawWireSphere(transform.position, moveRange);
         }
     }
 }
