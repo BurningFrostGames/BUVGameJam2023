@@ -12,6 +12,8 @@ TagManager:
   - WhiteGhost
   - RedGhost
   - SpawnLine
+  - deadzone
+  - safezone
   layers:
   - Default
   - TransparentFX
