@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7066348119585621194
 MonoBehaviour:
@@ -48,8 +48,6 @@ MonoBehaviour:
   spawnRadius: 7
   time: 3
   enemies:
-  - {fileID: 3330869092952441294, guid: 7715ce3bf122fef4589893ece626b40f, type: 3}
-  - {fileID: 3330869092952441294, guid: 3a12c0aa5cce51c4eb1685a1ed844917, type: 3}
   - {fileID: 3330869092952441294, guid: eeb52ee2c28e40245999639f83a0aca0, type: 3}
   ableToSpawn: 1
   scoreToPass: 1000
