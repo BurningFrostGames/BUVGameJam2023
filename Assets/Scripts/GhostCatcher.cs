@@ -10,7 +10,7 @@ using Random = UnityEngine.Random;
 [Serializable]
 public struct GhostParameter
 {
-    public Ghost Ghost;
+    public GhostWeapon Ghost;
 }
 
 public class GhostCatcher : MonoBehaviour
@@ -21,10 +21,10 @@ public class GhostCatcher : MonoBehaviour
     [SerializeField] private float pullSpeed = 10f;
     
     [MMReadOnly, SerializeField]
-    private Ghost _currentSelectedGhost;
+    private GhostWeapon _currentSelectedGhost;
 
     [MMReadOnly, SerializeField]
-    private Ghost _holdingGhost;
+    private GhostWeapon _holdingGhost;
 
     public AmmoFactory AmmoFactory; 
     
@@ -38,7 +38,7 @@ public class GhostCatcher : MonoBehaviour
         AmmoFactory.Init(this);
     }
 
-    public void InjectGhost(Ghost ghost)
+    public void InjectGhost(GhostWeapon ghost)
     {
         _holdingGhost = ghost;
         _currentSelectedGhost.gameObject.SetActive(false);
@@ -125,12 +125,12 @@ public class GhostCatcher : MonoBehaviour
     {
         var allColliders = new List<Collider2D>();
         catchAreaCollider.OverlapCollider(filter, allColliders);
-        allColliders = allColliders.Where(col => col.GetComponent<Ghost>()).ToList();
+        allColliders = allColliders.Where(col => col.GetComponent<GhostWeapon>()).ToList();
 
         if (allColliders.Count > 0)
         {
             Collider2D col = allColliders[Random.Range(0, allColliders.Count)];
-            _currentSelectedGhost = col.GetComponent<Ghost>();
+            _currentSelectedGhost = col.GetComponent<GhostWeapon>();
         }
     }
 

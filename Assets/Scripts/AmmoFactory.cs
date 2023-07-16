@@ -12,7 +12,7 @@ public class AmmoFactory : MonoBehaviour
 
     private float _nextTimeToFire;
 
-    private Ghost _ghost;
+    private GhostWeapon _ghost;
     private GhostCatcher _catcher;
 
     public void Init(GhostCatcher catcher)
@@ -20,7 +20,7 @@ public class AmmoFactory : MonoBehaviour
         _catcher = catcher;
     }
     
-    public void StartFactory(Ghost ghost)
+    public void StartFactory(GhostWeapon ghost)
     {
         _ghost = ghost;
         enabled = true;
@@ -46,8 +46,7 @@ public class AmmoFactory : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             if (!(Time.time >= _nextTimeToFire)) return;
-
-            SpawnProjectile();
+            
             _ghost.ConsumeAmmo();
 
             MMEventManager.TriggerEvent(new GhostParameter
@@ -59,10 +58,5 @@ public class AmmoFactory : MonoBehaviour
         }
     }
 
-    public void SpawnProjectile()
-    {
-        var bullet = Instantiate(_ghost.Projectile, spawnTransform.position, spawnTransform.rotation);
-        bullet.AddForce(spawnTransform.up * speed);
-        Destroy(bullet, 10f);
-    }
+    
 }
