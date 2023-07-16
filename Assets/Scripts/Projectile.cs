@@ -10,6 +10,7 @@ using UnityEngine;
          public float damage;
          public LayerMask damageMask;
 
+         public float projectileSpeed = 10f;
          public float despawnTime = 10f;
 
          private void Start()
@@ -21,7 +22,7 @@ using UnityEngine;
 
          public void AddForce(Vector3 direction)
          {
-             rb.AddForce(direction, ForceMode2D.Impulse);
+             rb.AddForce(direction * projectileSpeed, ForceMode2D.Impulse);
          }
 
          public void OnTriggerEnter2D(Collider2D other)

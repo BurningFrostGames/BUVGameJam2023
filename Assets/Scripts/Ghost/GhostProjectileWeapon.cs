@@ -11,7 +11,6 @@ namespace BurningFrost
         [SerializeField] private float fireRate = 10f;
 
         [SerializeField] private Projectile projectile;
-        [SerializeField] private float projectileSpeed = 10f;
 
         [SerializeField] private float ammoCost = 10;
 
@@ -35,12 +34,16 @@ namespace BurningFrost
             });
         }
 
+        public void SpawnProjectile(Transform firePoint)
+        {
+            var bullet = Instantiate(projectile, firePoint.position, firePoint.rotation);
+            bullet.AddForce(firePoint.up);
+            Destroy(bullet, 10f);
+        }
+        
         private void SpawnProjectile()
         {
-            var firePoint = weaponHandler.firePoint;
-            var bullet = Instantiate(projectile, firePoint.position, firePoint.rotation);
-            bullet.AddForce(firePoint.up * projectileSpeed);
-            Destroy(bullet, 10f);
+            SpawnProjectile(weaponHandler.firePoint);
         }
     }
 }
