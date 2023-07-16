@@ -21,6 +21,7 @@ public class Button_Manage : MonoBehaviour
     {
         //SceneManager.LoadScene(sceneBuildIndex: +1);
         Debug.Log("Load Game");
+        SceneManager.LoadScene("Dn test map");
     }
 
     public void options_Menu()
