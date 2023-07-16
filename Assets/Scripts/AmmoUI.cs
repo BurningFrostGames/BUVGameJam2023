@@ -4,37 +4,40 @@ using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AmmoUI : MonoBehaviour, MMEventListener<GhostParameter>
+namespace BurningFrost
 {
-    [SerializeField] private Slider slider;
-    [SerializeField] private Graphic fill;
-    
-    public void OnMMEvent(GhostParameter parameter)
+    public class AmmoUI : MonoBehaviour, MMEventListener<GhostParameter>
     {
-        if (!parameter.Ghost)
+        [SerializeField] private Slider slider;
+        [SerializeField] private Graphic fill;
+
+        public void OnMMEvent(GhostParameter parameter)
         {
-            fill.color = Color.clear;
-            return;
+            if (!parameter.Ghost)
+            {
+                fill.color = Color.clear;
+                return;
+            }
+
+            slider.maxValue = parameter.Ghost.MaxAmmo;
+            slider.value = parameter.Ghost.CurrentAmmo;
+            fill.color = parameter.Ghost.Color;
         }
-        
-        slider.maxValue = parameter.Ghost.MaxAmmo;
-        slider.value = parameter.Ghost.CurrentAmmo;
-        fill.color = parameter.Ghost.Color;
-    }
 
-    /// <summary>
-    /// On enable we start listening for events
-    /// </summary>
-    private void OnEnable()
-    {
-        this.MMEventStartListening();
-    }
+        /// <summary>
+        /// On enable we start listening for events
+        /// </summary>
+        private void OnEnable()
+        {
+            this.MMEventStartListening();
+        }
 
-    /// <summary>
-    /// On disable we stop listening for events
-    /// </summary>
-    private void OnDisable()
-    {
-        this.MMEventStopListening();
+        /// <summary>
+        /// On disable we stop listening for events
+        /// </summary>
+        private void OnDisable()
+        {
+            this.MMEventStopListening();
+        }
     }
 }

@@ -6,36 +6,67 @@ using MoreMountains.TopDownEngine;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class GhostWeapon : MonoBehaviour
+namespace BurningFrost
 {
-    private GhostHealth health => GetComponent<GhostHealth>();
-    public float MaxAmmo => health.maxHealth;
-    public float CurrentAmmo => health.currentHealth;
+    public abstract class GhostWeapon : MonoBehaviour
+    {
+        public float MaxAmmo => health.maxHealth;
+        public float CurrentAmmo => health.currentHealth;
 
-    public Projectile Projectile;
-    public float HealthPerAmmoFactor = 10;
-    
-    public Color Color;
+        public GameObject AIBody;
+        public Color Color = Color.white;
+        public float EjectStunTime = 2f;
 
-    public void OnInjected()
-    {
-        health.useEvent = false;
-    }
+        protected GhostWeaponHandler weaponHandler;
+        protected Health health => GetComponent<Health>();
 
-    public void OnEjected()
-    {
-        health.useEvent = true;
-    }
-    
-    public virtual void ConsumeAmmo()
-    {
-        health.Damage(HealthPerAmmoFactor);
-    }
-    
-    private Rigidbody2D rb => GetComponent<Rigidbody2D>();
-    
-    public void AddForce(Vector3 direction)
-    {
-        rb.AddForce(direction, ForceMode2D.Impulse);
+        public void OnInjected(GhostWeaponHandler handler)
+        {
+            health.useEvent = false;
+            weaponHandler = handler;
+
+            AIBody.SetActive(false);
+        }
+
+        public void OnEjected()
+        {
+            health.useEvent = true;
+            weaponHandler = null;
+
+            StartCoroutine(Stun());
+        }
+
+        IEnumerator Stun()
+        {
+            yield return new WaitForSeconds(EjectStunTime);
+            PostStun();
+        }
+
+        public virtual void PostStun()
+        {
+            AIBody.SetActive(true);
+        }
+
+        public void UseWeapon()
+        {
+            Attack();
+
+            MMEventManager.TriggerEvent(new GhostParameter
+            {
+                Ghost = this
+            });
+        }
+
+        protected virtual void Attack()
+        {
+
+        }
+
+        private Rigidbody2D rb => GetComponent<Rigidbody2D>();
+
+        public void AddForce(Vector3 direction)
+        {
+            rb.AddForce(direction, ForceMode2D.Impulse);
+        }
     }
 }
