@@ -1,9 +1,8 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class EnenmyAI : MonoBehaviour
+public class EnemyAI : MonoBehaviour
 {
     #region Public vars
     public float speed;

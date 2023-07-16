@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b54fc02117e6f4148b0e558e1245f829
+guid: d4fa751f4b100f94aa1bac7bdce13cd7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled 07-15-2023 11-02-44_0
+      name: White_Ghost_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,20 +144,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78fd30eb80dfc7b48b018d8ce1c3276b
-      internalID: -443280291
+      spriteID: 7ce0b6642baca484094cd3f57324b717
+      internalID: 1759880438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled 07-15-2023 11-02-44_1
+      name: White_Ghost_1
       rect:
         serializedVersion: 2
         x: 64
@@ -165,20 +165,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ec2f255640b8074b8e56999fc720886
-      internalID: 1935612712
+      spriteID: 5f68bbd4e04f33a448c59017039c61c2
+      internalID: 541122107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled 07-15-2023 11-02-44_2
+      name: White_Ghost_2
       rect:
         serializedVersion: 2
         x: 0
@@ -186,14 +186,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e35c2af2da195584080b9929f7953f8a
-      internalID: -1806877892
+      spriteID: 5cfe3198ba7df9b4ea8022fb945c0e94
+      internalID: 1000864853
       vertices: []
       indices: 
       edges: []
@@ -209,9 +209,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Untitled 07-15-2023 11-02-44_0: -443280291
-      Untitled 07-15-2023 11-02-44_1: 1935612712
-      Untitled 07-15-2023 11-02-44_2: -1806877892
+      White_Ghost_0: 1759880438
+      White_Ghost_1: 541122107
+      White_Ghost_2: 1000864853
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Buttom_Manage : MonoBehaviour
+public class Button_Manage : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

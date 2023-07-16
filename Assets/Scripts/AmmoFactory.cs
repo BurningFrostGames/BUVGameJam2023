@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class GhostAmmoFactory : MonoBehaviour
+public class AmmoFactory : MonoBehaviour
 {
     public Transform spawnTransform;
-    public GhostProjectile projectile;
     public float speed = 10f;
     public float fireRate = 10f;
 
@@ -37,7 +37,7 @@ public class GhostAmmoFactory : MonoBehaviour
     {
         if (!_ghost) return;
 
-        if (_ghost.CurrentAmmo == 0)
+        if (_ghost.CurrentAmmo <= 0)
         {
             _catcher.EjectGhost();
             return;
@@ -48,7 +48,12 @@ public class GhostAmmoFactory : MonoBehaviour
             if (!(Time.time >= _nextTimeToFire)) return;
 
             SpawnProjectile();
-            _ghost.CurrentAmmo -= 1;
+            _ghost.ConsumeAmmo();
+
+            MMEventManager.TriggerEvent(new GhostParameter
+            {
+                Ghost = _ghost
+            });
 
             _nextTimeToFire = Time.time + 1f / fireRate;
         }
@@ -56,7 +61,7 @@ public class GhostAmmoFactory : MonoBehaviour
 
     public void SpawnProjectile()
     {
-        var bullet = Instantiate(projectile, spawnTransform.position, spawnTransform.rotation);
+        var bullet = Instantiate(_ghost.Projectile, spawnTransform.position, spawnTransform.rotation);
         bullet.AddForce(spawnTransform.up * speed);
         Destroy(bullet, 10f);
     }

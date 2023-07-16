@@ -4,9 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
-using MoreMountains.TopDownEngine;
 using UnityEngine;
 using Random = UnityEngine.Random;
+
+[Serializable]
+public struct GhostParameter
+{
+    public Ghost Ghost;
+}
 
 public class GhostCatcher : MonoBehaviour
 {
@@ -21,7 +26,7 @@ public class GhostCatcher : MonoBehaviour
     [MMReadOnly, SerializeField]
     private Ghost _holdingGhost;
 
-    public GhostAmmoFactory AmmoFactory; 
+    public AmmoFactory AmmoFactory; 
     
     private Vector3 catchPosition => catchAreaCollider.transform.position;
 
@@ -39,7 +44,14 @@ public class GhostCatcher : MonoBehaviour
         _currentSelectedGhost.gameObject.SetActive(false);
         _currentSelectedGhost = null;
         
+        _holdingGhost.OnInjected();
+        
         AmmoFactory.StartFactory(_holdingGhost);
+        
+        MMEventManager.TriggerEvent(new GhostParameter
+        {
+            Ghost = _holdingGhost
+        });
     }
     
     public void EjectGhost()
@@ -50,13 +62,19 @@ public class GhostCatcher : MonoBehaviour
             _holdingGhost.transform.position = point.position;
             _holdingGhost.gameObject.SetActive(true);
             _holdingGhost.AddForce(point.up * 10f);
+            _holdingGhost.OnEjected();
         }
         else
         {
             Destroy(_holdingGhost.gameObject);
         }
-        
+
         AmmoFactory.StopFactory();
+        
+        MMEventManager.TriggerEvent(new GhostParameter
+        {
+            Ghost = null
+        });
         
         _holdingGhost = null;
     }
@@ -116,7 +134,7 @@ public class GhostCatcher : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(catchPosition, catchDistance);
