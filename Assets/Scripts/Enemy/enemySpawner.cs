@@ -28,14 +28,13 @@ public class enemySpawner : MonoBehaviour
     {
         if (this.gameObject.tag == "SpawnLine")
         {
-            if (collision.CompareTag("Player"))
+            if (collision.tag == "Player")
             {
                 if (ableToSpawn)
                 {
                     StartCoroutine(SpawnEnemy());
                 }
-
-                else if (ableToSpawn == false)
+                else
                 {
                     Debug.Log("Not able to spawn");
                 }
@@ -45,7 +44,7 @@ public class enemySpawner : MonoBehaviour
         }
         IEnumerator SpawnEnemy()
         {
-            Vector2 spawnPos = GameObject.Find("Player").transform.position;
+            Vector2 spawnPos = GameObject.FindWithTag("Player").transform.position;
             spawnPos += Random.insideUnitCircle.normalized * spawnRadius;
             Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity);
             yield return new WaitForSeconds(time);

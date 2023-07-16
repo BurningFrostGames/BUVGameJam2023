@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7374002474863670884}
   - component: {fileID: 6889628390553238962}
   - component: {fileID: 951616531844244272}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: White_Ghost
   m_TagString: WhiteGhost
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -185,8 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095112750ee43804a9bbc63597794919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 30
+  currentHealth: 30
   EnemyDied: 0
   Animate: {fileID: 7937421040977123420}
   hitEffect: {fileID: 0}
