@@ -10,7 +10,10 @@ public class ChangeSceneTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        ChangeScene(scene);
+        if (other.gameObject.tag == "Player")
+        {
+            ChangeScene(scene);
+        }
     }
 
     public void ChangeScene(string sceneName)
