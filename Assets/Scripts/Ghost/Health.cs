@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 namespace BurningFrost
 {
@@ -18,12 +19,20 @@ namespace BurningFrost
         public UnityEvent<float> OnDamaged;
         public UnityEvent OnDeath;
 
+        public Slider Slider;
+        
         private bool _isDead;
 
         // Start is called before the first frame update
         private void Start()
         {
             currentHealth = maxHealth;
+
+            if (Slider)
+            {
+                Slider.maxValue = maxHealth;
+                Slider.value = currentHealth;
+            }
         }
 
         public void Damage(float damage)
