@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -15,17 +16,23 @@ namespace BurningFrost
         [SerializeField] private float ammoCost = 10;
 
         private float _nextTimeToFire;
-
-        protected override void Attack()
+        
+        public override void UseWeapon()
         {
-            base.Attack();
-
             if (!(Time.time >= _nextTimeToFire)) return;
 
             SpawnProjectile();
             health.Damage(ammoCost);
 
             _nextTimeToFire = Time.time + 1f / fireRate;
+            
+            MMEventManager.TriggerEvent(new GhostParameter
+            {
+                isNull = false,
+                MaxFloat = MaxAmmo,
+                CurrentFloat = CurrentAmmo,
+                Color = Color
+            });
         }
 
         private void SpawnProjectile()

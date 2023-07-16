@@ -47,19 +47,19 @@ namespace BurningFrost
             AIBody.SetActive(true);
         }
 
-        public void UseWeapon()
+        public virtual void PressedWeapon()
         {
-            Attack();
+            
+        }
+        
+        public virtual void UseWeapon()
+        {
 
-            MMEventManager.TriggerEvent(new GhostParameter
-            {
-                Ghost = this
-            });
         }
 
-        protected virtual void Attack()
+        public virtual void ReleasedWeapon()
         {
-
+            
         }
 
         private Rigidbody2D rb => GetComponent<Rigidbody2D>();

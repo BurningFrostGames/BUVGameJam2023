@@ -130,9 +130,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1878106402259433152}
-  force: 20
-  chargeTime: 10
+  force: 50
+  chargeTime: 3
   moveTime: 1
+  damage: 50
   _currentTime: 0
   _currentMoveTime: 0
 --- !u!58 &4438295616094749381
@@ -216,17 +217,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5210988194818649067}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbda1a02fd15b6d4bb54b9b183404209, type: 3}
+  m_Script: {fileID: 11500000, guid: 14b858e7240d41546a69127be0fd9534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AIBody: {fileID: 1914588132314198175}
   Color: {r: 1, g: 0, b: 0, a: 1}
   EjectStunTime: 2
-  fireRate: 10
-  projectile: {fileID: 2470538245735677720, guid: d5c449dee1d19a140a2d908093c3f780,
+  projectile: {fileID: 2470538245735677720, guid: b564217e7902c7747b0afb4fb90a4373,
     type: 3}
+  spawnOffset: 1
   projectileSpeed: 10
-  ammoCost: 10000
+  holdTime: 2
 --- !u!114 &3177442184862467473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,8 +276,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 5
+  m_Mass: 10
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

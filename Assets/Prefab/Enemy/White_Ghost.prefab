@@ -164,7 +164,19 @@ MonoBehaviour:
       m_Calls: []
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7694149195279059509}
+        m_TargetAssemblyTypeName: BurningFrost.Health, Assembly-CSharp
+        m_MethodName: DestroyOnDeath
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &7942184708439132976
 Rigidbody2D:
   serializedVersion: 4
@@ -207,7 +219,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -273,3 +285,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7942184708439132976}
   speed: 10
+  attackRange: 2

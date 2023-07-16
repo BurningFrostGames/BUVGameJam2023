@@ -19,9 +19,7 @@ namespace BurningFrost
         [MMReadOnly, SerializeField] private float _currentTime;
         [MMReadOnly, SerializeField] private float _currentMoveTime;
 
-        private bool _startCharging;
-
-
+        private bool _isAttacking;
         private Health _health => GetComponentInParent<Health>();
 
         // Start is called before the first frame update
@@ -34,7 +32,7 @@ namespace BurningFrost
         void StartCharge()
         {
             rb.velocity = Vector2.zero;
-            _startCharging = false;
+            _isAttacking = false;
 
             _currentTime = chargeTime;
             _currentMoveTime = moveTime;
@@ -52,10 +50,10 @@ namespace BurningFrost
                 return;
             }
 
-            if (!_startCharging)
+            if (!_isAttacking)
             {
                 rb.AddForce(_direction * force, ForceMode2D.Impulse);
-                _startCharging = true;
+                _isAttacking = true;
             }
 
             if (_currentMoveTime > 0)
@@ -69,6 +67,8 @@ namespace BurningFrost
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (!_isAttacking) return;
+            
             if (other.gameObject.CompareTag("Player"))
             {
                 if (other.gameObject.TryGetComponent(out IDamageable damageable))
